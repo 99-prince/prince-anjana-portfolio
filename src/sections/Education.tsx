@@ -31,7 +31,9 @@ const Education = () => {
                   </span>
                 </div>
                 <h4 className="text-gray-300 text-lg mb-2">{item.institution}</h4>
-                <div className="text-sm text-gray-400 font-mono mb-4 border-b border-white/10 pb-4 inline-block">Grade: {item.grade}</div>
+                <div className="text-sm text-gray-400 font-mono mb-4 border-b border-white/10 pb-4 inline-block">
+                  {item.gradeLabel ?? 'Grade'}: {item.grade}
+                </div>
                 <p className="text-gray-400 font-light leading-relaxed">
                   {item.description}
                 </p>

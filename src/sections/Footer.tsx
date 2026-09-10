@@ -34,6 +34,15 @@ const Footer = () => {
             >
               <Briefcase size={18} />
             </a>
+            <a
+              href={portfolioData.codingProfiles.find((profile) => profile.platform === 'LeetCode')?.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LeetCode profile"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
+            >
+              <span className="text-xs font-bold">LC</span>
+            </a>
           </div>
           
           <button 

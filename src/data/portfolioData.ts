@@ -10,8 +10,8 @@ export const portfolioData = {
   },
   stats: {
     yearsOfLearning: "03+",
-    projectsCompleted: "10+",
-    certifications: "06+",
+    projectsCompleted: "03+",
+    certifications: "04+",
     achievements: "05+",
   },
   education: [
@@ -19,7 +19,8 @@ export const portfolioData = {
       degree: "B.Tech in Computer Science Engineering",
       institution: "JECRC University",
       year: "2024 - Present (3rd Year, 5th Sem)",
-      grade: "Pursuing",
+      grade: "8.80",
+      gradeLabel: "CGPA",
       description: "Focusing on core computer science subjects, Data Structures, Algorithms, and Full Stack Development.",
     },
     {
@@ -63,6 +64,17 @@ export const portfolioData = {
   },
   projects: [
     {
+      title: "FAM WHEEL",
+      description: "A full-stack platform connecting farmers, buyers, and transport providers so agricultural products can move from farm to customer more efficiently.",
+      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js"],
+      image: "/famwheel-home.png",
+      github: "https://github.com/99-prince",
+      live: "https://famwheel-frontend.onrender.com",
+      features: ["Farmer Marketplace", "Transport Coordination", "Responsive UI"],
+      challenges: "Designing a simple workflow for multiple user roles.",
+      results: "Built a practical product concept for agricultural commerce."
+    },
+    {
       title: "Full Stack Portfolio",
       description: "A premium, highly interactive, cinematic 3D animated personal portfolio website built with React and Three.js.",
       technologies: ["React", "Three.js", "Tailwind CSS", "TypeScript"],
@@ -87,36 +99,52 @@ export const portfolioData = {
   ],
   certifications: [
     {
-      name: "College Rivals September Qualifiers",
-      organization: "College Rivals (Ampverse / PlayStation)",
-      date: "September 18, 2024",
-      credentialId: "Certificate of Participation",
-      credentialLink: "",
-      image: "/profile.jpg"
+      name: "Google Cloud Career Foundations",
+      organization: "Google Cloud",
+      date: "2025",
+      credentialId: "Certificate",
+      credentialLink: "/gccf-certificate.jpg",
+      image: "/gccf-certificate.jpg"
+    },
+    {
+      name: "Forest Management",
+      organization: "NPTEL",
+      date: "2025",
+      credentialId: "Certificate",
+      credentialLink: "/nptel-certificate.jpg",
+      image: "/nptel-certificate.jpg"
+    },
+    {
+      name: "Full Stack Development",
+      organization: "Infosys Springboard",
+      date: "2026",
+      credentialId: "Certificate",
+      credentialLink: "/full-stack-certificate.pdf",
+      image: "/full-stack-certificate.pdf"
     },
     {
       name: "Software Engineering",
       organization: "Infosys Springboard",
-      date: "September 10, 2026",
-      credentialId: "N/A",
-      credentialLink: "",
-      image: "https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=800&auto=format&fit=crop"
-    },
-    {
-      name: "Learning Full Stack Development",
-      organization: "Infosys Springboard",
-      date: "September 8, 2026",
-      credentialId: "N/A",
-      credentialLink: "",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop"
+      date: "2026",
+      credentialId: "Certificate",
+      credentialLink: "/software-engineering-certificate.pdf",
+      image: "/software-engineering-certificate.pdf"
     },
     {
       name: "Decode C++ with DSA Course",
       organization: "Physics Wallah",
       date: "May 20, 2026",
       credentialId: "f89f780e-c167-49a6-97fb-5a8153b20c41",
-      credentialLink: "",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
+      credentialLink: "/pw-dsa-certificate.jpg",
+      image: "/pw-dsa-certificate.jpg"
+    },
+    {
+      name: "College Rivals September Qualifiers",
+      organization: "College Rivals (Ampverse / PlayStation)",
+      date: "September 18, 2024",
+      credentialId: "Certificate of Participation",
+      credentialLink: "/college-rivals.jpg",
+      image: "/college-rivals.jpg"
     }
   ],
   achievements: [
@@ -167,7 +195,7 @@ export const portfolioData = {
   ],
   resume: {
     description: "Detailed overview of my academic background, technical skills, and certifications.",
-    link: "https://www.linkedin.com/in/prince-anjana-77b57b320"
+    link: "/Prince-Anjana-Resume.pdf"
   },
   services: [
     { title: "Frontend Development", description: "Creating immersive, responsive, and interactive user interfaces using React and Tailwind CSS." },

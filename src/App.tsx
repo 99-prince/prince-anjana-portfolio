@@ -12,6 +12,7 @@ import Certifications from './sections/Certifications';
 import Achievements from './sections/Achievements';
 import Experience from './sections/Experience';
 import Contact from './sections/Contact';
+import Resume from './sections/Resume';
 import Footer from './sections/Footer';
 import Background3D from './three/Background3D';
 
@@ -49,6 +50,7 @@ function App() {
                 <Certifications />
                 <Achievements />
                 <Experience />
+                <Resume />
                 <Contact />
               </main>
               <Footer />
