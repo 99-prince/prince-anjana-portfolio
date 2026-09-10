@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Briefcase, Code2, ExternalLink, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import SectionHeading from '../components/SectionHeading';
 
@@ -70,6 +70,26 @@ const Contact = () => {
                   <h4 className="text-sm text-gray-500 uppercase tracking-widest mb-1">Location</h4>
                   <p className="text-white">{portfolioData.contact.location}</p>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {[
+                  { label: 'GitHub', href: portfolioData.contact.social.github, icon: <Code2 size={18} /> },
+                  { label: 'LinkedIn', href: portfolioData.contact.social.linkedin, icon: <Briefcase size={18} /> },
+                  { label: 'LeetCode', href: portfolioData.contact.social.leetcode, icon: <span className="text-xs font-bold">LC</span> },
+                ].map((profile) => (
+                  <a
+                    key={profile.label}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-3 text-sm text-gray-300 transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-white"
+                  >
+                    {profile.icon}
+                    {profile.label}
+                    <ExternalLink size={14} className="text-gray-500" />
+                  </a>
+                ))}
               </div>
             </motion.div>
           </div>

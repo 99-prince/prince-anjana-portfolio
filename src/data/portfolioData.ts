@@ -213,12 +213,13 @@ export const portfolioData = {
     vision: "To leverage technology to solve real-world problems and continuously grow as a developer."
   },
   contact: {
-    email: "prince.anjana@example.com",
+    email: "princeanjana623@gmail.com",
     phone: "",
     location: "Jaipur, India",
     social: {
       github: "https://github.com/99-prince",
       linkedin: "https://www.linkedin.com/in/prince-anjana-77b57b320",
+      leetcode: "https://leetcode.com/u/Prince_Anjana/",
       twitter: ""
     }
   },
