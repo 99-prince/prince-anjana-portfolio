@@ -2,25 +2,49 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Code2, Briefcase } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import Hero3D from '../three/Hero3D';
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center">
-        
+
+        {/* Profile image appears first on mobile so it remains the focal point without squeezing the copy. */}
+        <div className="order-1 mb-12 flex w-full items-center justify-center md:order-2 md:mb-0 md:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[390px] lg:max-w-[430px]"
+          >
+            <div className="absolute -inset-5 rounded-[2rem] bg-sky-500/10 blur-2xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-slate-950/80 shadow-2xl shadow-sky-950/40">
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/35 via-transparent to-slate-950/10" aria-hidden="true" />
+              <img
+                src="/prince-anjana-profile.jpeg"
+                alt="Prince Anjana - Software Developer"
+                className="aspect-[4/5] w-full object-cover object-[center_18%]"
+                width="768"
+                height="960"
+                fetchPriority="high"
+              />
+            </div>
+          </motion.div>
+        </div>
+
         {/* Left Content */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center text-left mb-12 md:mb-0">
+        <div className="order-2 mb-12 flex w-full flex-col justify-center text-left md:order-1 md:mb-0 md:w-1/2">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-primary font-mono tracking-widest text-sm md:text-base mb-4">
-              HELLO, I AM
-            </h2>
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium tracking-wide text-emerald-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
+              AVAILABLE FOR INTERNSHIPS
+            </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tighter">
-              {portfolioData.personalInfo.name.toUpperCase()}
+              <span className="block">{portfolioData.personalInfo.name.split(' ')[0]}</span>
+              <span className="block text-primary">{portfolioData.personalInfo.name.split(' ')[1]}</span>
             </h1>
             <h3 className="text-xl md:text-3xl text-gray-300 font-light mb-6">
               {portfolioData.personalInfo.role}
@@ -57,19 +81,10 @@ const Hero = () => {
               <a href={portfolioData.contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white" aria-label="Open Prince Anjana's LinkedIn profile">
                 <Briefcase size={18} /> LinkedIn
               </a>
+              <a href={portfolioData.contact.social.leetcode} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white" aria-label="Open Prince Anjana's LeetCode profile">
+                <Code2 size={18} /> LeetCode
+              </a>
             </div>
-          </motion.div>
-        </div>
-
-        {/* Right 3D Area */}
-        <div className="w-full md:w-1/2 h-[500px] md:h-[700px] relative">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="w-full h-full"
-          >
-            <Hero3D />
           </motion.div>
         </div>
       </div>
