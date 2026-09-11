@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight, Code2, Briefcase } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import Hero3D from '../three/Hero3D';
 
@@ -30,25 +30,32 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
+              <a
                 href="#projects"
                 className="group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium tracking-wide overflow-hidden rounded-sm transition-all hover:scale-105"
               >
                 <span className="absolute inset-0 w-full h-full bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -translate-x-full"></span>
                 <span className="relative flex items-center gap-2">
-                  EXPLORE MY WORLD <ArrowRight size={18} />
+                  VIEW PROJECTS <ArrowRight size={18} />
                 </span>
               </a>
               
-              <a 
+              <a
                 href={portfolioData.resume.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                download
                 className="group inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-medium tracking-wide border border-white/20 rounded-sm transition-all hover:bg-white/5 hover:border-white/40"
               >
                 <span className="flex items-center gap-2">
-                  VIEW PROFILE <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
+                  DOWNLOAD RESUME <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 </span>
+              </a>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-5 text-sm text-gray-400">
+              <a href={portfolioData.contact.social.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white" aria-label="Open Prince Anjana's GitHub profile">
+                <Code2 size={18} /> GitHub
+              </a>
+              <a href={portfolioData.contact.social.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white" aria-label="Open Prince Anjana's LinkedIn profile">
+                <Briefcase size={18} /> LinkedIn
               </a>
             </div>
           </motion.div>

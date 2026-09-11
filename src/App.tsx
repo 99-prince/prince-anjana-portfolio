@@ -41,7 +41,7 @@ function App() {
             
             <div className="relative z-10">
               <Navigation />
-              <main>
+              <main className="overflow-x-clip">
                 <Hero />
                 <About />
                 <Education />

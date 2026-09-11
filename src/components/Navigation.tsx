@@ -1,29 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
 const navItems = [
   { name: 'HOME', href: '#home' },
   { name: 'ABOUT', href: '#about' },
-  { name: 'EDUCATION', href: '#education' },
   { name: 'SKILLS', href: '#skills' },
   { name: 'PROJECTS', href: '#projects' },
   { name: 'EXPERIENCE', href: '#experience' },
-  { name: 'RESUME', href: '#resume' },
+  { name: 'EDUCATION', href: '#education' },
+  { name: 'ACHIEVEMENTS', href: '#achievements' },
+  { name: 'CERTIFICATIONS', href: '#certifications' },
   { name: 'CONTACT', href: '#contact' },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const sections = navItems.map((item) => document.querySelector(item.href)).filter((section): section is Element => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
+      { rootMargin: '-35% 0px -55% 0px' }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -45,13 +56,17 @@ const Navigation = () => {
             <a 
               key={item.name} 
               href={item.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group tracking-wider"
+              className={twMerge('text-sm font-medium transition-colors relative group tracking-wider', activeSection === item.href.slice(1) ? 'text-primary' : 'text-gray-300 hover:text-white')}
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={twMerge('absolute -bottom-1 left-0 h-[2px] bg-primary transition-all duration-300', activeSection === item.href.slice(1) ? 'w-full' : 'w-0 group-hover:w-full')}></span>
             </a>
           ))}
         </nav>
+
+        <a href="/Prince-Anjana-Resume.pdf" download className="hidden md:inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-xs font-semibold tracking-wider text-white transition-colors hover:bg-sky-600">
+          RESUME <Download size={15} />
+        </a>
 
         {/* Mobile Nav Toggle */}
         <button 

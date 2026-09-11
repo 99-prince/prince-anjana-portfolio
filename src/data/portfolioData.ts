@@ -1,18 +1,18 @@
 export const portfolioData = {
   personalInfo: {
     name: "Prince Anjana",
-    role: "Computer Science Engineer & SDE",
-    tagline: "B.Tech CSE student at JECRC University passionate about software engineering and competitive programming.",
-    bio: "I am a 3rd-year (5th semester) Computer Science Engineering student at JECRC University. I have a strong foundation in C++ and Data Structures & Algorithms, and I specialize in Software Development Engineering. I love solving complex problems, learning new technologies, and building innovative projects that make everyday life easier.",
-    shortIntro: "Crafting modern web experiences, solving algorithmic challenges, and building scalable software architectures.",
+    role: "Software Developer | Full-Stack Developer | C++ & DSA",
+    tagline: "B.Tech CSE student building practical full-stack applications and strengthening software engineering fundamentals.",
+    bio: "I am a 3rd-year B.Tech Computer Science Engineering student at JECRC University with a current CGPA of 8.80. I build full-stack applications with React, Node.js, Express, PostgreSQL, and Prisma, while using C++ and Data Structures & Algorithms to improve my problem-solving skills. I am currently deepening my software engineering and Python fundamentals, with an interest in exploring AI/ML in the future.",
+    shortIntro: "I build real full-stack applications and continuously improve my problem-solving and software engineering skills.",
     location: "Jaipur, India",
-    careerGoal: "To become a proficient Software Engineer and build impactful tech solutions.",
+    careerGoal: "Seeking software engineering and full-stack development internship opportunities.",
   },
   stats: {
     yearsOfLearning: "03+",
     projectsCompleted: "03+",
-    certifications: "04+",
-    achievements: "05+",
+    certifications: "06",
+    achievements: "02",
   },
   education: [
     {
@@ -42,64 +42,67 @@ export const portfolioData = {
     categories: [
       {
         name: "Programming Languages",
-        items: ["C++", "Java", "Python", "JavaScript", "TypeScript"]
+        items: ["C", "C++", "C++ STL", "JavaScript", "Python"]
       },
       {
         name: "Core Subjects",
-        items: ["Data Structures", "Algorithms", "Object-Oriented Programming", "DBMS", "Operating Systems"," Computer Networks", "Software Engineering"]
+        items: ["Data Structures", "Algorithms", "Object-Oriented Programming", "DBMS", "Operating Systems", "Computer Networks", "Software Engineering"]
       },
       {
         name: "Frontend Development",
-        items: ["HTML", "CSS", "React.js", "Tailwind CSS"]
+        items: ["HTML", "CSS", "React", "Vite", "Tailwind CSS"]
       },
       {
         name: "Backend Development",
-        items: ["Node.js", "Express.js", "MongoDB", "SQL", "RESTful APIs"]
+        items: ["Node.js", "Express.js", "REST APIs", "Socket.IO"]
       },
       {
         name: "Tools & Technologies",
-        items: ["Git", "GitHub", "VS Code", "Postman", "Vite"]
+        items: ["PostgreSQL", "Prisma", "Git", "GitHub", "VS Code", "Postman"]
       }
     ]
   },
   projects: [
     {
       title: "FAM WHEEL",
+      category: "Full-Stack Web Application",
       description: "A full-stack platform connecting farmers, buyers, and transport providers so agricultural products can move from farm to customer more efficiently.",
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js"],
+      technologies: ["React", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Socket.IO"],
       image: "/famwheel-home.png",
       github: "https://github.com/99-prince",
       live: "https://famwheel-frontend.onrender.com",
-      features: ["Farmer Marketplace", "Transport Coordination", "Responsive UI"],
+      features: ["Authentication", "Crop Listings", "Orders & Offers", "Real-time Messaging"],
       challenges: "Designing a simple workflow for multiple user roles.",
       results: "Built a practical product concept for agricultural commerce."
     },
     {
-      title: "Full Stack Portfolio",
-      description: "A premium, highly interactive, cinematic 3D animated personal portfolio website built with React and Three.js.",
+      title: "Interactive Developer Portfolio",
+      category: "Frontend Application",
+      description: "A responsive personal portfolio built to present my projects, technical skills, education, and certifications in one focused experience.",
       technologies: ["React", "Three.js", "Tailwind CSS", "TypeScript"],
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
       github: "https://github.com/99-prince",
-      live: "#",
+      live: "",
       features: ["3D Interactions", "Responsive Design", "Custom Animations"],
       challenges: "Integrating 3D canvas seamlessly with React UI.",
-      results: "Created a stunning visual experience for recruiters."
+      results: "Created a fast, accessible showcase for recruiters and collaborators."
     },
     {
       title: "More Projects on GitHub",
-      description: "Check out my GitHub profile for a complete list of my open-source projects, algorithms, and web development tasks.",
-      technologies: ["MERN Stack", "C++", "Algorithms"],
+      category: "Open-Source & Practice",
+      description: "Explore my GitHub profile for additional projects, programming practice, and ongoing software experiments.",
+      technologies: ["C++", "DSA", "JavaScript"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
       github: "https://github.com/99-prince",
       live: "https://github.com/99-prince",
       features: ["Diverse Tech Stack", "Clean Code", "Problem Solving"],
       challenges: "Consistently learning and building.",
-      results: "Strong portfolio of technical implementations."
+      results: "A continuously growing record of hands-on learning."
     }
   ],
   certifications: [
     {
-      name: "Google Cloud Career Foundations",
+      name: "Google Cloud Computing Foundations",
       organization: "Google Cloud",
       date: "2025",
       credentialId: "Certificate",
@@ -198,14 +201,15 @@ export const portfolioData = {
     link: "/Prince-Anjana-Resume.pdf"
   },
   services: [
-    { title: "Frontend Development", description: "Creating immersive, responsive, and interactive user interfaces using React and Tailwind CSS." },
-    { title: "Backend Development", description: "Building robust and scalable server-side solutions using Node.js and Express." },
-    { title: "Problem Solving", description: "Strong algorithmic thinking and data structures knowledge in C++ and Java." }
+     { title: "Frontend Development", description: "Building responsive interfaces with React, JavaScript, HTML, CSS, Vite, and Tailwind CSS." },
+     { title: "Backend Development", description: "Creating REST APIs and real-time features with Node.js, Express.js, PostgreSQL, Prisma, and Socket.IO." },
+     { title: "Problem Solving", description: "Strengthening algorithmic thinking and data structures fundamentals with C++ and regular practice." }
   ],
   learning: [
-    "Advanced System Design",
-    "Cloud Computing (AWS)",
-    "Next.js & Server-side Rendering"
+    "DSA & Problem Solving",
+    "Python fundamentals",
+    "Production full-stack development",
+    "AI/ML foundations (future direction)"
   ],
   goals: {
     shortTerm: "To secure a software engineering internship at a top tech company.",

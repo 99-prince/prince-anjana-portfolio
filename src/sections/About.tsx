@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-6 md:px-12">
-        <SectionHeading title="ABOUT ME" subtitle="A glimpse into who I am and what drives me." />
+        <SectionHeading title="ABOUT ME" subtitle="A focused look at what I build and where I am growing." />
         
         <div className="flex flex-col gap-16 items-center">
           <motion.div 
@@ -24,7 +24,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               <div className="glass p-6 rounded-lg text-center">
                 <h4 className="text-3xl font-bold text-white mb-2">{portfolioData.stats.yearsOfLearning}</h4>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">Years Exp</p>
+                <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">Years Learning</p>
               </div>
               <div className="glass p-6 rounded-lg text-center">
                 <h4 className="text-3xl font-bold text-white mb-2">{portfolioData.stats.projectsCompleted}</h4>
@@ -36,21 +36,21 @@ const About = () => {
               </div>
               <div className="glass p-6 rounded-lg text-center">
                 <h4 className="text-3xl font-bold text-white mb-2">{portfolioData.stats.achievements}</h4>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">Awards</p>
+                <p className="text-xs text-gray-400 uppercase tracking-widest font-mono">Highlights</p>
               </div>
             </div>
             
             <div className="space-y-4 font-mono text-sm">
-              <div className="flex border-b border-white/10 pb-4">
-                <span className="text-primary w-32">LOCATION</span>
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-4 sm:flex-row">
+                <span className="w-auto shrink-0 text-primary sm:w-32">LOCATION</span>
                 <span className="text-gray-300">{portfolioData.personalInfo.location}</span>
               </div>
-              <div className="flex border-b border-white/10 pb-4">
-                <span className="text-primary w-32">CURRENT ROLE</span>
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-4 sm:flex-row">
+                <span className="w-auto shrink-0 text-primary sm:w-32">CURRENT ROLE</span>
                 <span className="text-gray-300">{portfolioData.personalInfo.role}</span>
               </div>
-              <div className="flex border-b border-white/10 pb-4">
-                <span className="text-primary w-32">GOAL</span>
+              <div className="flex flex-col gap-2 border-b border-white/10 pb-4 sm:flex-row">
+                <span className="w-auto shrink-0 text-primary sm:w-32">GOAL</span>
                 <span className="text-gray-300">{portfolioData.personalInfo.careerGoal}</span>
               </div>
             </div>

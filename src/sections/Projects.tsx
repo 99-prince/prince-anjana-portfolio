@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, ExternalLink } from 'lucide-react';
+import { Code2, ExternalLink, Check } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import SectionHeading from '../components/SectionHeading';
 
@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 relative bg-black/30">
       <div className="container mx-auto px-6 md:px-12">
-        <SectionHeading title="SELECTED WORKS" subtitle="A showcase of my recent and most impactful projects." />
+        <SectionHeading title="SELECTED WORKS" subtitle="Real applications and technical work built while developing my software engineering skills." />
         
         <div className="space-y-24 md:space-y-32">
           {portfolioData.projects.map((project, index) => (
@@ -34,8 +34,11 @@ const Projects = () => {
               
               {/* Content side */}
               <div className={`w-full lg:w-2/5 flex flex-col ${index % 2 !== 0 ? 'lg:items-end lg:text-right' : 'lg:items-start lg:text-left'} relative z-20`}>
-                <span className="text-primary font-mono tracking-widest text-sm mb-4">Featured Project 0{index + 1}</span>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 hover:text-primary transition-colors cursor-pointer">
+                <div className="mb-4 flex flex-wrap items-center gap-3">
+                  <span className="text-primary font-mono tracking-widest text-sm">PROJECT 0{index + 1}</span>
+                  <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs text-primary">{project.category}</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 
@@ -50,32 +53,42 @@ const Projects = () => {
                     <span className="font-semibold text-white">Result:</span> {project.results}
                   </p>
                 </div>
+
+                <ul className={`mb-6 grid grid-cols-1 gap-2 text-sm text-gray-300 sm:grid-cols-2 ${index % 2 !== 0 ? 'lg:justify-items-end' : ''}`}>
+                  {project.features.slice(0, 4).map((feature) => (
+                    <li key={feature} className="inline-flex items-center gap-2">
+                      <Check size={15} className="shrink-0 text-primary" /> {feature}
+                    </li>
+                  ))}
+                </ul>
                 
-                <ul className={`flex flex-wrap gap-4 mb-8 font-mono text-sm text-gray-400 ${index % 2 !== 0 ? 'lg:justify-end' : 'justify-start'}`}>
+                <ul className={`mb-8 flex flex-wrap gap-2 ${index % 2 !== 0 ? 'lg:justify-end' : 'justify-start'}`}>
                   {project.technologies.map((tech, i) => (
-                    <li key={i}>{tech}</li>
+                    <li key={i} className="rounded border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-mono text-gray-300">{tech}</li>
                   ))}
                 </ul>
                 
                 <div className="flex gap-6 items-center">
-                  <a 
+                  <a
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-white hover:text-primary transition-transform hover:-translate-y-1"
                     aria-label="GitHub Repository"
                   >
-                    <Code2 size={24} />
+                    <span className="inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2 text-sm transition-colors hover:border-primary hover:text-primary"><Code2 size={17} /> GitHub</span>
                   </a>
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-primary transition-transform hover:-translate-y-1"
-                    aria-label="Live Demo"
-                  >
-                    <ExternalLink size={24} />
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white transition-transform hover:-translate-y-1 hover:text-primary"
+                      aria-label={`Open ${project.title} live demo`}
+                    >
+                      <span className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm transition-colors hover:bg-sky-600"><ExternalLink size={17} /> Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
